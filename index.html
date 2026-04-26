@@ -3,145 +3,323 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fledge — One CLI. Your whole dev lifecycle.</title>
-  <meta name="description" content="Fledge is a dev-lifecycle CLI for scaffolding, task running, code review, releases, and more. Humans and AI, same interface.">
+  <title>Fledge — One CLI for your entire dev lifecycle</title>
+  <meta name="description" content="Scaffold, build, test, review, and release from one binary. Structured JSON for AI agents. Pretty output for humans. Built in Rust.">
+  <meta property="og:title" content="Fledge — One CLI for your entire dev lifecycle">
+  <meta property="og:description" content="Scaffold, build, test, review, and release from one binary. Built in Rust.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://corvidlabs.github.io/getfledge/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fledge — Dev Lifecycle CLI">
+  <meta name="twitter:description" content="One CLI for scaffolding, tasks, code review, releases, and more. Humans and AI, same interface.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER / HERO -->
-  <header class="hero">
-    <div class="container">
-      <h1>fledge</h1>
-      <p class="tagline">One CLI. Your whole dev lifecycle.<br>Humans and AI, same interface.</p>
-      <div class="hero-cta">
-        <code class="install-cmd">cargo install fledge</code>
-        <a href="https://github.com/CorvidLabs/fledge" class="btn btn-primary">GitHub</a>
-        <a href="#get-started" class="btn btn-secondary">Get Started</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Primary navigation">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon" aria-hidden="true">⚡</span> fledge
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="https://corvidlabs.github.io/fledge/" rel="noopener noreferrer">Docs</a>
+        <a href="https://github.com/CorvidLabs/fledge" class="btn-nav" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- SECTION 1: THE PROBLEM -->
-  <section class="problem">
-    <div class="container">
-      <h2>The Problem</h2>
-      <p>
-        Developers use Make for tasks, GitHub Actions for CI, shell scripts for releases.<br>
-        AI agents read JSON, humans want pretty output.<br>
-        You need two tools. <strong>Fledge is one.</strong>
-      </p>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- SECTION 2: SIX PILLARS -->
-  <section class="pillars">
-    <div class="container">
-      <h2>Six Pillars</h2>
-      <div class="pillar-grid">
-        <div class="pillar">
-          <h3>Scaffold</h3>
-          <p>Start any project from a template. Language-aware, git-ready, zero config.</p>
+    <header class="hero">
+      <div class="container">
+        <div class="badge-rust">
+          <span class="dot" aria-hidden="true"></span> Built with Rust &middot; v0.13
         </div>
-        <div class="pillar">
-          <h3>Run</h3>
-          <p>One command to build, test, lint — auto-detects your stack.</p>
+        <h1>One CLI for your entire dev lifecycle</h1>
+        <p class="tagline">
+          Scaffold, build, test, review, and release &mdash; from one binary.<br>
+          <span class="highlight">Structured JSON for AI agents.</span> Pretty output for humans.
+        </p>
+
+        <div class="hero-cta">
+          <div class="install-wrapper">
+            <span class="prompt" aria-hidden="true">$</span>
+            <code class="install-cmd">cargo install fledge</code>
+            <button class="copy-btn" aria-label="Copy install command" onclick="copyCmd(this)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+          <a href="#get-started" class="btn btn-primary">Get Started</a>
         </div>
-        <div class="pillar">
-          <h3>Spec</h3>
-          <p>Keep specs and code in sync. Drift detected, never ignored.</p>
-        </div>
-        <div class="pillar">
-          <h3>AI</h3>
-          <p>Code review, Q&amp;A, and generation — built in, not bolted on.</p>
-        </div>
-        <div class="pillar">
-          <h3>Ship</h3>
-          <p>Bump, changelog, tag, release. One command from commit to publish.</p>
-        </div>
-        <div class="pillar">
-          <h3>Extend</h3>
-          <p>Plugins and lanes — compose your own workflows.</p>
-        </div>
+
+        <p class="trust-line">Single binary. No runtime dependencies. MIT licensed.</p>
       </div>
-    </div>
-  </section>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </header>
 
-  <!-- SECTION 3: REAL WORKFLOW -->
-  <section class="workflow">
-    <div class="container">
-      <h2>Same Tool. Different Roles.</h2>
-      <div class="persona-grid">
-        <div class="persona">
-          <h3>Developer</h3>
-          <pre><code>$ fledge run test
+    <section class="problem">
+      <div class="container">
+        <h2>Your tools don't talk to each other</h2>
+        <div class="problem-grid">
+          <div class="problem-item before">
+            <h3>Before</h3>
+            <ul>
+              <li><code>Makefile</code> for tasks</li>
+              <li><code>shell scripts</code> for releases</li>
+              <li><code>GitHub Actions</code> for CI</li>
+              <li>Separate AI tools for review</li>
+              <li>Tribal knowledge for onboarding</li>
+            </ul>
+          </div>
+          <div class="problem-arrow" aria-hidden="true">&rarr;</div>
+          <div class="problem-item after">
+            <h3>After</h3>
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="tdot red" aria-hidden="true"></span>
+                <span class="tdot yellow" aria-hidden="true"></span>
+                <span class="tdot green" aria-hidden="true"></span>
+              </div>
+              <pre><code>$ fledge run test
 $ fledge review
 $ fledge release patch</code></pre>
-          <p>Interactive prompts, pretty diffs, human-friendly output.</p>
+            </div>
+            <p>One config. One interface. Everything talks.</p>
+          </div>
         </div>
-        <div class="persona">
-          <h3>AI Agent</h3>
-          <pre><code>$ fledge run test --output json
-$ fledge review --output json
-$ fledge release patch --yes</code></pre>
-          <p>Structured output, no prompts, machine-parseable.</p>
+      </div>
+    </section>
+
+    <section class="pillars" id="features">
+      <div class="container">
+        <h2>From zero to shipped</h2>
+        <div class="pillar-grid">
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">🏗️</div>
+            <h3><code>fledge init</code></h3>
+            <p>Language-aware scaffolding. Templates with post-hooks, git init, and dependency setup. Zero config drift.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">⚙️</div>
+            <h3><code>fledge run</code></h3>
+            <p>Auto-detects Cargo, npm, Go, Python. One command for build, test, lint — no Makefile required.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">📐</div>
+            <h3><code>fledge spec</code></h3>
+            <p>Keep specs and code in sync. Drift detection fails CI before your API breaks production.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">🤖</div>
+            <h3><code>fledge review</code></h3>
+            <p>Local AI code review via Ollama or Claude. No API keys for local models. Catches bugs, enforces conventions.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">🚀</div>
+            <h3><code>fledge release</code></h3>
+            <p>Conventional commits &rarr; changelog &rarr; version bump &rarr; git tag &rarr; GitHub release. One command.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">🧩</div>
+            <h3><code>fledge plugin</code></h3>
+            <p>Rust-based plugin system. Publish to crates.io, share across teams, compose custom workflows.</p>
+          </article>
         </div>
-        <div class="persona">
-          <h3>New Hire</h3>
-          <pre><code>$ fledge init
-$ fledge doctor
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow">
+      <div class="container">
+        <h2>One binary. Three interfaces.</h2>
+        <p class="section-intro">Fledge adapts its output based on who &mdash; or what &mdash; is calling it.</p>
+
+        <div class="persona-grid">
+          <article class="persona" aria-labelledby="persona-dev">
+            <div class="persona-header">
+              <h3 id="persona-dev">Developer</h3>
+              <span class="role-badge">Interactive</span>
+            </div>
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="tdot red" aria-hidden="true"></span>
+                <span class="tdot yellow" aria-hidden="true"></span>
+                <span class="tdot green" aria-hidden="true"></span>
+              </div>
+              <pre><code>$ fledge review
+✎ Analyzing 8 changed files...
+⚠ src/auth.rs:54 — Unhandled Result
+? Apply fix? [Y/n/diff]</code></pre>
+            </div>
+            <p>Interactive prompts, pretty diffs, colored output.</p>
+          </article>
+
+          <article class="persona" aria-labelledby="persona-ai">
+            <div class="persona-header">
+              <h3 id="persona-ai">AI Agent</h3>
+              <span class="role-badge ai">Machine</span>
+            </div>
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="tdot red" aria-hidden="true"></span>
+                <span class="tdot yellow" aria-hidden="true"></span>
+                <span class="tdot green" aria-hidden="true"></span>
+              </div>
+              <pre><code>$ fledge review --output json
+{"issues": [{"file": "src/auth.rs",
+  "line": 54, "fix": "..."}]}
+$ fledge run test --output json
+{"status": "pass", "time": 0.042}</code></pre>
+            </div>
+            <p>Strict JSON, no prompts, machine-parseable. Your agents finally understand the codebase.</p>
+          </article>
+
+          <article class="persona" aria-labelledby="persona-new">
+            <div class="persona-header">
+              <h3 id="persona-new">New Hire</h3>
+              <span class="role-badge">Onboarding</span>
+            </div>
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="tdot red" aria-hidden="true"></span>
+                <span class="tdot yellow" aria-hidden="true"></span>
+                <span class="tdot green" aria-hidden="true"></span>
+              </div>
+              <pre><code>$ fledge doctor
+✓ Rust 1.75+ detected
+✓ Git hooks installed
+✓ Environment ready
 $ fledge run dev</code></pre>
-          <p>Guided setup, environment checks, zero tribal knowledge required.</p>
+            </div>
+            <p>Guided setup, env checks, zero tribal knowledge. New hires push code on day one.</p>
+          </article>
+        </div>
+
+        <p class="callout">Same tool. Different flags. Everyone wins.</p>
+      </div>
+    </section>
+
+    <section class="teams">
+      <div class="container">
+        <h2>Built for teams, not just individuals</h2>
+        <div class="team-grid">
+          <article class="team-card">
+            <h3>Standardized Config</h3>
+            <p>One <code>fledge.toml</code> per repo. Every project runs the same way — no more &ldquo;works on my machine.&rdquo;</p>
+          </article>
+          <article class="team-card">
+            <h3>Spec Enforcement</h3>
+            <p>Specs drift? CI catches it. <code>fledge spec check</code> ensures docs and code never diverge.</p>
+          </article>
+          <article class="team-card">
+            <h3>Fast Onboarding</h3>
+            <p><code>fledge doctor</code> validates the entire environment. <code>fledge init</code> scaffolds with team templates.</p>
+          </article>
+          <article class="team-card">
+            <h3>Code Metrics</h3>
+            <p>LOC, test ratios, churn — <code>fledge metrics</code> gives leads visibility without extra tooling.</p>
+          </article>
         </div>
       </div>
-      <p class="callout">Same tool. Different flags. Everyone wins.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 4: PLUGINS -->
-  <section class="plugins">
-    <div class="container">
-      <h2>Build On It</h2>
-      <p>Extend with what you need. Fledge plugins are just Rust crates — publish, share, compose.</p>
-      <pre><code># Install a community plugin
-$ fledge plugin add coverage
-
-# Use it immediately
-$ fledge coverage report</code></pre>
-    </div>
-  </section>
-
-  <!-- SECTION 5: GETTING STARTED -->
-  <section class="get-started" id="get-started">
-    <div class="container">
-      <h2>Get Started</h2>
-      <div class="cta-grid">
-        <div class="cta-card">
-          <h3>Install</h3>
-          <pre><code>cargo install fledge</code></pre>
-        </div>
-        <div class="cta-card">
-          <h3>Initialize</h3>
-          <pre><code>fledge init</code></pre>
-        </div>
-        <div class="cta-card">
-          <h3>Read the Docs</h3>
-          <p><a href="https://corvidlabs.github.io/fledge/">Documentation &rarr;</a></p>
+    <section class="plugins">
+      <div class="container">
+        <h2>Extend without lock-in</h2>
+        <p class="section-intro">Fledge plugins are Rust crates. Install from crates.io, git, or local paths.</p>
+        <div class="code-showcase">
+          <div class="code-block">
+            <span class="comment"># Install a community plugin</span>
+            <div class="cmd-line">$ fledge plugin add coverage</div>
+          </div>
+          <div class="code-block">
+            <span class="comment"># Use it immediately</span>
+            <div class="cmd-line">$ fledge coverage report</div>
+          </div>
+          <div class="code-block">
+            <span class="comment"># Or compose custom workflows</span>
+            <div class="cmd-line">$ fledge lane run ci</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
+    <section class="get-started" id="get-started">
+      <div class="container">
+        <h2>Get started in 60 seconds</h2>
+        <div class="cta-grid">
+          <div class="cta-card">
+            <div class="step-number" aria-hidden="true">1</div>
+            <h3>Install</h3>
+            <pre><code>cargo install fledge</code></pre>
+          </div>
+          <div class="cta-card">
+            <div class="step-number" aria-hidden="true">2</div>
+            <h3>Initialize</h3>
+            <pre><code>fledge init</code></pre>
+          </div>
+          <div class="cta-card">
+            <div class="step-number" aria-hidden="true">3</div>
+            <h3>Ship</h3>
+            <pre><code>fledge release patch</code></pre>
+          </div>
+        </div>
+        <div class="final-cta">
+          <a href="https://corvidlabs.github.io/fledge/" class="btn btn-primary" rel="noopener noreferrer">Read the Docs &rarr;</a>
+          <a href="https://github.com/CorvidLabs/fledge" class="btn btn-secondary" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <footer>
     <div class="container">
-      <p>
-        <a href="https://github.com/CorvidLabs/fledge">GitHub</a> &middot;
-        MIT License &middot;
-        Built by <a href="https://github.com/CorvidLabs">CorvidLabs</a>
-      </p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo">⚡ fledge</span>
+          <p>The unified dev lifecycle CLI.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/CorvidLabs/fledge" rel="noopener noreferrer">GitHub</a>
+          <a href="https://corvidlabs.github.io/fledge/" rel="noopener noreferrer">Docs</a>
+          <a href="https://github.com/CorvidLabs" rel="noopener noreferrer">CorvidLabs</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>MIT License &middot; Built by <a href="https://github.com/CorvidLabs" rel="noopener noreferrer">CorvidLabs</a></p>
+      </div>
     </div>
   </footer>
+
+  <script>
+    function copyCmd(btn) {
+      var cmd = btn.parentElement.querySelector('.install-cmd').textContent;
+      navigator.clipboard.writeText(cmd).then(function() {
+        btn.classList.add('copied');
+        setTimeout(function() { btn.classList.remove('copied'); }, 2000);
+      });
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.pillar, .persona, .team-card, .cta-card, .problem-item, .code-block').forEach(function(el) {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
