@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fledge — One CLI. Your whole dev lifecycle.</title>
+  <meta name="description" content="Fledge is a dev-lifecycle CLI for scaffolding, task running, code review, releases, and more. Humans and AI, same interface.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / HERO -->
+  <header class="hero">
+    <div class="container">
+      <h1>fledge</h1>
+      <p class="tagline">One CLI. Your whole dev lifecycle.<br>Humans and AI, same interface.</p>
+      <div class="hero-cta">
+        <code class="install-cmd">cargo install fledge</code>
+        <a href="https://github.com/CorvidLabs/fledge" class="btn btn-primary">GitHub</a>
+        <a href="#get-started" class="btn btn-secondary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: THE PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <h2>The Problem</h2>
+      <p>
+        Developers use Make for tasks, GitHub Actions for CI, shell scripts for releases.<br>
+        AI agents read JSON, humans want pretty output.<br>
+        You need two tools. <strong>Fledge is one.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SIX PILLARS -->
+  <section class="pillars">
+    <div class="container">
+      <h2>Six Pillars</h2>
+      <div class="pillar-grid">
+        <div class="pillar">
+          <h3>Scaffold</h3>
+          <p>Start any project from a template. Language-aware, git-ready, zero config.</p>
+        </div>
+        <div class="pillar">
+          <h3>Run</h3>
+          <p>One command to build, test, lint — auto-detects your stack.</p>
+        </div>
+        <div class="pillar">
+          <h3>Spec</h3>
+          <p>Keep specs and code in sync. Drift detected, never ignored.</p>
+        </div>
+        <div class="pillar">
+          <h3>AI</h3>
+          <p>Code review, Q&amp;A, and generation — built in, not bolted on.</p>
+        </div>
+        <div class="pillar">
+          <h3>Ship</h3>
+          <p>Bump, changelog, tag, release. One command from commit to publish.</p>
+        </div>
+        <div class="pillar">
+          <h3>Extend</h3>
+          <p>Plugins and lanes — compose your own workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: REAL WORKFLOW -->
+  <section class="workflow">
+    <div class="container">
+      <h2>Same Tool. Different Roles.</h2>
+      <div class="persona-grid">
+        <div class="persona">
+          <h3>Developer</h3>
+          <pre><code>$ fledge run test
+$ fledge review
+$ fledge release patch</code></pre>
+          <p>Interactive prompts, pretty diffs, human-friendly output.</p>
+        </div>
+        <div class="persona">
+          <h3>AI Agent</h3>
+          <pre><code>$ fledge run test --output json
+$ fledge review --output json
+$ fledge release patch --yes</code></pre>
+          <p>Structured output, no prompts, machine-parseable.</p>
+        </div>
+        <div class="persona">
+          <h3>New Hire</h3>
+          <pre><code>$ fledge init
+$ fledge doctor
+$ fledge run dev</code></pre>
+          <p>Guided setup, environment checks, zero tribal knowledge required.</p>
+        </div>
+      </div>
+      <p class="callout">Same tool. Different flags. Everyone wins.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PLUGINS -->
+  <section class="plugins">
+    <div class="container">
+      <h2>Build On It</h2>
+      <p>Extend with what you need. Fledge plugins are just Rust crates — publish, share, compose.</p>
+      <pre><code># Install a community plugin
+$ fledge plugin add coverage
+
+# Use it immediately
+$ fledge coverage report</code></pre>
+    </div>
+  </section>
+
+  <!-- SECTION 5: GETTING STARTED -->
+  <section class="get-started" id="get-started">
+    <div class="container">
+      <h2>Get Started</h2>
+      <div class="cta-grid">
+        <div class="cta-card">
+          <h3>Install</h3>
+          <pre><code>cargo install fledge</code></pre>
+        </div>
+        <div class="cta-card">
+          <h3>Initialize</h3>
+          <pre><code>fledge init</code></pre>
+        </div>
+        <div class="cta-card">
+          <h3>Read the Docs</h3>
+          <p><a href="https://corvidlabs.github.io/fledge/">Documentation &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        <a href="https://github.com/CorvidLabs/fledge">GitHub</a> &middot;
+        MIT License &middot;
+        Built by <a href="https://github.com/CorvidLabs">CorvidLabs</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

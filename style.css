@@ -1,0 +1,307 @@
+/* Base — minimal, clean, ready for visual polish pass */
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --code-bg: #1c2128;
+  --border: #30363d;
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.hero h1 {
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.install-cmd {
+  font-family: var(--font-mono);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  user-select: all;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+}
+
+/* Sections */
+section {
+  padding: 4rem 1.5rem;
+}
+
+section:nth-child(even) {
+  background: var(--surface);
+}
+
+section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Problem */
+.problem p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.problem strong {
+  color: var(--text);
+}
+
+/* Pillars */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.pillar {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.pillar h3 {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.pillar p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Workflow / Personas */
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.persona {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+section.workflow {
+  background: var(--bg);
+}
+
+.persona h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+}
+
+.persona pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.persona code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.persona p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.callout {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Plugins */
+.plugins {
+  text-align: center;
+}
+
+.plugins p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.plugins pre {
+  display: inline-block;
+  text-align: left;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.plugins code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* Get Started */
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cta-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cta-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.cta-card pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.cta-card code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.cta-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta-card a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .pillar-grid,
+  .persona-grid,
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+}
