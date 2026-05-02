@@ -21,14 +21,21 @@ Fledge is a single Rust binary that replaces your Makefile, shell scripts, and s
 
 ## Local development
 
+This repo eats its own dog food — tasks are defined in `fledge.toml`.
+
 ```bash
-# Any static file server works
-python3 -m http.server 8000
-# or
-npx serve .
+# Serve locally
+fledge run serve            # python3 http.server on :8000
+fledge run serve-bun        # bunx serve alternative
+
+# Validate before pushing
+fledge run validate         # html-validate on index.html
+fledge lanes run ci         # format-check + validate + links
 ```
 
 Open `http://localhost:8000` in your browser.
+
+> Don't have fledge yet? `cargo install fledge` or `brew install CorvidLabs/tap/fledge`.
 
 ## Deploy
 
