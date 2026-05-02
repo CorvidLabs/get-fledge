@@ -42,7 +42,7 @@
       <div class="container">
         <a href="https://github.com/CorvidLabs/fledge/releases/tag/v1.0.0" class="badge-rust badge-release" rel="noopener noreferrer">
           <span class="dot" aria-hidden="true"></span>
-          <span class="badge-pill" aria-label="Version one point zero">1.0</span>
+          <span class="badge-pill"><span class="visually-hidden">Version </span>1.0</span>
           is here &middot; Read the release notes &rarr;
         </a>
         <h1>One CLI for your entire dev lifecycle</h1>
@@ -55,7 +55,7 @@
           <div class="install-wrapper">
             <span class="prompt" aria-hidden="true">$</span>
             <code class="install-cmd">cargo install fledge</code>
-            <button class="copy-btn" aria-label="Copy install command" onclick="copyCmd(this)">
+            <button type="button" class="copy-btn" aria-label="Copy install command" onclick="copyCmd(this)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
             </button>
           </div>
@@ -91,7 +91,7 @@
               </div>
               <pre><code>$ fledge run test
 $ fledge review
-$ fledge release</code></pre>
+$ fledge release patch</code></pre>
             </div>
             <p>One config. One interface. Everything connects.</p>
           </div>
@@ -111,7 +111,7 @@ $ fledge release</code></pre>
           <article class="pillar">
             <div class="pillar-icon" aria-hidden="true">⚙️</div>
             <h3><code>fledge run</code></h3>
-            <p>Auto-detects Cargo, npm, Go, Python. One command for build, test, lint. No Makefile required.</p>
+            <p>Auto-detects Rust, Node, Go, Python, Swift, Ruby, and Java. One command for build, test, lint. No Makefile required.</p>
           </article>
           <article class="pillar">
             <div class="pillar-icon" aria-hidden="true">📐</div>
@@ -120,13 +120,13 @@ $ fledge release</code></pre>
           </article>
           <article class="pillar">
             <div class="pillar-icon" aria-hidden="true">🤖</div>
-            <h3><code>fledge review</code></h3>
-            <p>Single or multi-model AI review via Ollama or Claude. Spec-aware, panel-style critiques on the same diff.</p>
+            <h3><code>fledge review</code> &amp; <code>ask</code></h3>
+            <p>Spec-aware AI review via Ollama or Claude. Panel critiques with <code>--with-model</code>. Ask questions about your codebase with <code>fledge ask</code>.</p>
           </article>
           <article class="pillar">
             <div class="pillar-icon" aria-hidden="true">🚀</div>
             <h3><code>fledge release</code></h3>
-            <p>Conventional commits &rarr; changelog &rarr; version bump &rarr; git tag &rarr; push. One command.</p>
+            <p>Pick a bump (<code>patch</code>/<code>minor</code>/<code>major</code>); fledge writes the changelog from conventional commits, tags, and pushes.</p>
           </article>
           <article class="pillar">
             <div class="pillar-icon" aria-hidden="true">🧩</div>
@@ -272,8 +272,8 @@ $ fledge run dev</code></pre>
           <div class="cta-card">
             <div class="step-number" aria-hidden="true">3</div>
             <h3>Ship</h3>
-            <pre><code>fledge release</code></pre>
-            <p class="alt-install">auto-bumps from conventional commits</p>
+            <pre><code>fledge release patch</code></pre>
+            <p class="alt-install">bump, changelog, tag, push &mdash; one shot</p>
           </div>
         </div>
         <div class="final-cta">

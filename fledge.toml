@@ -1,0 +1,34 @@
+# fledge.toml — getfledge landing page
+# Static HTML/CSS site. No build step. Deployed via GitHub Pages.
+
+[tasks.serve]
+cmd = "python3 -m http.server 8000"
+description = "Serve the site locally on http://localhost:8000"
+
+[tasks.serve-bun]
+cmd = "bunx serve -l 8000 ."
+description = "Serve via Bun (alternative to python3)"
+
+[tasks.format]
+cmd = "bunx prettier --write 'index.html' 'style.css' 'README.md'"
+description = "Format HTML, CSS, and Markdown with Prettier"
+
+[tasks.format-check]
+cmd = "bunx prettier --check 'index.html' 'style.css' 'README.md'"
+description = "Verify formatting without writing changes"
+
+[tasks.validate]
+cmd = "bunx html-validate index.html"
+description = "Validate index.html against HTML standards"
+
+[tasks.links]
+cmd = "bunx linkinator index.html --skip 'localhost'"
+description = "Check for broken links in index.html"
+
+[tasks.check]
+cmd = "fledge run validate && fledge run links"
+description = "Run all non-mutating checks (validate + links)"
+
+[lanes.ci]
+description = "Pre-merge checks: format, validate, links"
+steps = ["format-check", "validate", "links"]
