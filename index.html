@@ -73,12 +73,14 @@
         <div class="problem-grid">
           <div class="problem-item before">
             <h3>Before</h3>
-            <ul>
-              <li><code>Makefile</code> for tasks</li>
-              <li><code>shell scripts</code> for releases</li>
-              <li>Separate AI tools for review</li>
-              <li>Tribal knowledge for onboarding</li>
-            </ul>
+            <div class="before-card">
+              <ul>
+                <li><code>Makefile</code> for tasks</li>
+                <li><code>shell scripts</code> for releases</li>
+                <li>Separate AI tools for review</li>
+                <li>Tribal knowledge for onboarding</li>
+              </ul>
+            </div>
           </div>
           <div class="problem-arrow" aria-hidden="true">&rarr;</div>
           <div class="problem-item after">
@@ -89,9 +91,9 @@
                 <span class="tdot yellow" aria-hidden="true"></span>
                 <span class="tdot green" aria-hidden="true"></span>
               </div>
-              <pre><code>$ fledge run test
-$ fledge review
-$ fledge release patch</code></pre>
+              <pre><code><span class="t-p">$</span> <span class="t-c">fledge</span> run test
+<span class="t-p">$</span> <span class="t-c">fledge</span> review
+<span class="t-p">$</span> <span class="t-c">fledge</span> release patch</code></pre>
             </div>
             <p>One config. One interface. Everything connects.</p>
           </div>
@@ -160,10 +162,10 @@ $ fledge release patch</code></pre>
                 <span class="tdot yellow" aria-hidden="true"></span>
                 <span class="tdot green" aria-hidden="true"></span>
               </div>
-              <pre><code>$ fledge review
-⠋ Reviewing changes against main [claude]
-⚠ src/auth.rs:54: unhandled Result
-✓ 7 files clean</code></pre>
+              <pre><code><span class="t-p">$</span> <span class="t-c">fledge</span> review
+<span class="t-mute">⠋ Reviewing changes against main [claude]</span>
+<span class="t-warn">⚠ src/auth.rs:54: unhandled Result</span>
+<span class="t-ok">✓ 7 files clean</span></code></pre>
             </div>
             <p>Colored output, inline findings, spec-aware analysis.</p>
           </article>
@@ -179,12 +181,12 @@ $ fledge release patch</code></pre>
                 <span class="tdot yellow" aria-hidden="true"></span>
                 <span class="tdot green" aria-hidden="true"></span>
               </div>
-              <pre><code>$ fledge review --json
-{"schema_version": 1,
- "action": "review", ...}
-$ fledge run test --json
-{"schema_version": 1,
- "action": "run_task", ...}</code></pre>
+              <pre><code><span class="t-p">$</span> <span class="t-c">fledge</span> review --json
+<span class="t-json">{"schema_version": 1,
+ "action": "review", ...}</span>
+<span class="t-p">$</span> <span class="t-c">fledge</span> run test --json
+<span class="t-json">{"schema_version": 1,
+ "action": "run_task", ...}</span></code></pre>
             </div>
             <p>Strict JSON, no prompts, machine-parseable. Your agents finally understand the codebase.</p>
           </article>
@@ -200,11 +202,11 @@ $ fledge run test --json
                 <span class="tdot yellow" aria-hidden="true"></span>
                 <span class="tdot green" aria-hidden="true"></span>
               </div>
-              <pre><code>$ fledge doctor
-✅ fledge config loaded
-✅ repository — remote configured
-✅ Active provider: ollama
-$ fledge run dev</code></pre>
+              <pre><code><span class="t-p">$</span> <span class="t-c">fledge</span> doctor
+<span class="t-ok">✅</span> fledge config loaded
+<span class="t-ok">✅</span> repository — remote configured
+<span class="t-ok">✅</span> Active provider: ollama
+<span class="t-p">$</span> <span class="t-c">fledge</span> run dev</code></pre>
             </div>
             <p>Guided setup, env checks, zero tribal knowledge. New hires push code on day one.</p>
           </article>
