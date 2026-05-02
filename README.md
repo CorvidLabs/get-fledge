@@ -2,7 +2,7 @@
 
 Landing page for [Fledge](https://github.com/CorvidLabs/fledge) — one CLI for your entire dev lifecycle.
 
-**Live:** [corvidlabs.github.io/getfledge](https://corvidlabs.github.io/getfledge/)
+**Live:** [corvidlabs.github.io/getfledge](https://corvidlabs.github.io/get-fledge/)
 **Docs:** [corvidlabs.github.io/fledge](https://corvidlabs.github.io/fledge/)
 
 ## What is Fledge?
